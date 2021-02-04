@@ -10,7 +10,7 @@ public class prob2 {
    public static int solve(int[] arr) {
     int n=arr.length;
     int max=arr[n-1];
-    int ans=0;
+    int ans=arr[n-1]-arr[n-2];
     for(int i=n-1;i>=0;i--){
         int a=arr[i];
         ans=Math.max(ans,(max-a));
