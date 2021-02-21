@@ -14,7 +14,7 @@ public class Solution {
 
         int p2=b-1;
         int p1=1;
-        int anss=0;
+        long anss=0l;
         int mod=(int)Math.pow(10,9)+7;
         while(p1<p2){
             anss+=(ans[p1]*ans[p2])%mod;
@@ -24,28 +24,24 @@ public class Solution {
         }
 
         if(b%2==0 && ans[b/2]>=2){
-            // anss+=(((ans[b/2]*(ans[b/2]-1))/2))%mod;
             int bb=1;
-            for(int i=ans[b/2];i>1;i--){
-                bb*=i;
-                bb%=mod;
-            }
+            
+            bb=(ans[b/2]*(ans[b/2]-1))%mod;
             bb/=2;
-            anss+=bb;
+            bb%=mod;
+            anss+=bb%mod;
             anss%=mod;
         }
-        if(b%2==0 && ans[0]>=2){
-            // anss+=(((ans[0]*(ans[0]-1))/2))%mod;
+        if(ans[0]>=2){  
             int bb=1;
-            for(int i=ans[0];i>1;i--){
-                bb*=i;
-                bb%=mod;
-            }
+            
+            bb=(ans[0]*(ans[0]-1))%mod;
             bb/=2;
-            anss+=bb;
+            bb%=mod;
+            anss+=bb%mod;
             anss%=mod;
         }
-
-        return anss%mod;
+        int z=(int)(anss%mod);
+        return z;
     }
 }
