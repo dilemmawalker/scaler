@@ -3,8 +3,6 @@ public class Solution {
         int m=b;
         b=b-2;
         if(b==0){
-            // if(a==0)
-            // return 0;
         return 1;
         }
         return sol(a,b,m);
@@ -18,10 +16,10 @@ public class Solution {
         long aa=0l;
         int ans=sol(a,b/2,m);
         if(b%2==0){
-            aa=(ans%m*ans%m)%m;
+            aa=(1l * ans*ans)%m;
         }
         else{
-            aa=(ans%m*(ans%m*a%m)%m)%m;
+            aa=(1l * ans*((1l*ans*a)%m))%m;
         }
         return (int)(aa%m);
     }
