@@ -12,6 +12,6 @@ boolean print(int i,int n,int ans[],int k,int sum){
         int a=ans[i];
         res=res||print(i+1,n,ans,k,sum);
         res=res||print(i+1,n,ans,k,sum+a);
-
+//
     return res;
 }
