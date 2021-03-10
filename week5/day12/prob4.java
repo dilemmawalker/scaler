@@ -9,12 +9,12 @@ public class Solution {
             x^=ele;
         }
 
-        for(int i=0;i<=30;i++){
+        for(int i=0;i<=31;i++){
             int mask=1<<i;
             if((mask & x)!=0){
                 for(int j=0;j<n;j++){
                     int ele=arr[j];
-                    if((ele & (1<<i))!=0){
+                    if((ele & mask)!=0){
                         a^=ele;
                     }
                     else{
