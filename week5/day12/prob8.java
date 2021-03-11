@@ -8,7 +8,7 @@ public class Solution {
                 pos=i;
             }
         }
-
+//
         int y=(1<<(pos+1));
         int x=0;
         for(int i=0;i<pos;i++){
