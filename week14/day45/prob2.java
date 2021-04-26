@@ -1,7 +1,7 @@
 public class Solution {
     public String solve(String str) {
         int n=str.length();
-        String post="";
+        StringBuilder post=new StringBuilder();
         Stack<Character>st=new Stack<>();
         HashMap<Character,Integer>map=new HashMap<>();
         map.put('+',1);
@@ -24,7 +24,7 @@ public class Solution {
                         if(c=='(')
                         break;
 
-                        post+=c;
+                        post.append(c);
                     }
                 }
                 else{
@@ -37,18 +37,18 @@ public class Solution {
                             break;
                         }
                         c=st.pop();
-                        post+=c;
+                        post.append(c);
                     }
                     st.push(ch);
                 }
             }
             else{
-                post+=ch;
+                post.append(ch);
             }
         }
         while(st.size()!=0){
-            post+=st.pop();
+            post.append(st.pop());
         }
-        return post;
+        return post.toString();
     }
 }
