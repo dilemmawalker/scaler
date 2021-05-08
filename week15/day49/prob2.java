@@ -13,7 +13,7 @@ public class Solution {
         for(int i=0;i<n;i++){
             char ch=str.charAt(i);
             freq[ch-'a']--;
-            while(st.size()>0 && st.peek()>ch && freq[st.peek()-'a']>0){
+            while(st.size()>0 && st.peek()>ch && freq[st.peek()-'a']>0 && !vis[ch-'a']){
                 char c=st.pop();
                 vis[c-'a']=false;
             }
@@ -21,7 +21,7 @@ public class Solution {
             st.push(ch);
             vis[ch-'a']=true;
             }
-        }
+        }   
 
         StringBuilder sb=new StringBuilder();
         while(st.size()>0){
@@ -32,3 +32,5 @@ public class Solution {
         return sb.toString();
     }
 }
+
+//nsutwcgpgpxonqbzsvpmjksjminhitsfenbhowixva
