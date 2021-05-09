@@ -18,43 +18,47 @@ public class Solution {
             int a=arr[i];
             while(st.size()>0 && arr[st.peek()]>=a){
                 int b=st.pop();
-                rmax[b]=a;
+                rmax[b]=i;
             }
             st.push(i);
         }
         st=new Stack<>();
         for(int i=0;i<n;i++){
             int a=arr[i];
-            while(st.size()>0 && arr[st.peek()]<a){
+            while(st.size()>0 && arr[st.peek()]<=a){
                 int b=st.pop();
-                rmin[b]=a;
+                rmin[b]=i;
             }
+            st.push(i);
         }
         st=new Stack<>();
         for(int i=n-1;i>=0;i--){
             int a=arr[i];
-            while(st.size()>0 && arr[st.peek()]>=a){
+            while(st.size()>0 && arr[st.peek()]>a){
                 int b=st.pop();
-                lmax[b]=a;
+                lmax[b]=i;
             }
+            st.push(i);
         }
         st=new Stack<>();
         for(int i=n-1;i>=0;i--){
             int a=arr[i];
             while(st.size()>0 && arr[st.peek()]<a){
                 int b=st.pop();
-                lmin[b]=a;
+                lmin[b]=i;
             }
+            st.push(i);
         }
         int mod=(int)Math.pow(10,9)+7;
-        int sum=0;
+        long sum=0l;
         for(int i=0;i<n;i++){
             int a=arr[i];
-            int max=rmax[i]-lmax[i]-1;
-            int min=rmin[i]-lmin[i]-1;
-            int val=(((max-min)*a)%mod+mod)%mod;
-            sum=((sum+val%mod)%mod+mod)%mod;
+            int max=(rmax[i]-i)*(i-lmax[i]);
+            int min=(rmin[i]-i)*(i-lmin[i]);
+            long val=0l;
+            val=(((max-min)*a)%mod)%mod;
+            sum=(sum+val)%mod;
         }
-        return sum;
+        return (int)sum;
     }
 }
