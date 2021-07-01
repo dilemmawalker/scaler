@@ -14,12 +14,11 @@ public class Solution {
     public static ArrayList<ArrayList<Integer>>ans=new ArrayList<>();
     public static void solve(int[]arr,int idx,ArrayList<Integer>ar){
         if(idx==arr.length){
-            int size=ar.size();
-            ArrayList<Integer>arrr=new ArrayList<>();
-            for(int i=0;i<size;i++){
-                arrr.add(ar.get(i));
+            ArrayList<Integer>temp=new ArrayList<>();
+            for(int i=0;i<arr.length;i++){
+                temp.add(ar.get(i));
             }
-            ans.add(arrr);
+            ans.add(temp); 
             return;
         }
         HashSet<Integer>map=new HashSet<>();
