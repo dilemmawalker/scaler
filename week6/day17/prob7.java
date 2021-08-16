@@ -1,4 +1,4 @@
-public class Solution { //tle
+public class Solution { //tle worst case
     public int solve(int aa, int[] b, int[][] c) {
         int n=c.length;
         int[]arr=new int[50];//pair real
