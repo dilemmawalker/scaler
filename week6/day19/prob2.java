@@ -1,4 +1,4 @@
-public class Solution {
+public class Solution { //Generate all Parentheses II
     public String[] generateParenthesis(int a) {
         ArrayList<String>arr=new ArrayList<>();
         Stack<Character>st=new Stack<>();
