@@ -43,7 +43,7 @@
 
         public void merge(long[]ar,int[][]arr,int lo,int mid,int hi){  //merge function
             int n=ar.length;
-            mid++;
+            mid++;                       //important!!!!
             int mi=mid;
             int l=lo,m=mid,h=hi;
             long[]temp=new long[hi-lo+1];
@@ -88,7 +88,7 @@
                     mid++;            
             }
             idx=0;
-            for(int i=l;i<=h;i++){
+            for(int i=l;i<=h;i++){  //important!!!!   go till h position i.e. i<=h & not i<h   (v.v.imp)
                 ar[i]=temp[idx];
                 arr[i][0]=tempp[idx][0];
                 arr[i][1]=tempp[idx][1];
