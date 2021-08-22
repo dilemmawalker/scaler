@@ -1,4 +1,4 @@
-public class Solution {
+public class Solution {               //max chunks to make sorted
     public int solve(int[] arr) {
         int n=arr.length;
         int max=0;
