@@ -1,4 +1,4 @@
-public class Solution {
+public class Solution {                 //Min Swaps 2
     public int solve(int[] arr) {
         int n=arr.length;
         int[]idxarr=new int[n];
