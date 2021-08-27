@@ -18,12 +18,16 @@ public class Solution {                 //Sum the Difference
         }
         return (int)((sum1-sum2+mod)%mod);
     }
-    public long power(int x,int y,int mod){
+    public long power(long x,int y,int mod){
         x%=mod;
-        long val=1l;
-        while(y-->0){
-           val=(val*x*1l + mod)%mod;
+        long res=1l;
+        while(y>0){
+           if(y%2==1)
+           res=(res*x*1l + mod)%mod;
+
+           x=(x*x*1l + mod)%mod;
+           y/=2;
         }
-        return val;
+        return res;
     }
 }
