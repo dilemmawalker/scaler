@@ -1,4 +1,4 @@
-public class prob1 {
+public class prob1 {                            //Sorted Insert Position
     public int searchInsert(int[] arr, int b) {
         int n=arr.length;
         if(arr[n-1]<b)
