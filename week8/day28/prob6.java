@@ -1,4 +1,4 @@
-public class Solution {
+public class Solution {                 //Aggressive cows
     public int solve(int[] arr, int no) {
         int n=arr.length;
         Arrays.sort(arr);
