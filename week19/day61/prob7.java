@@ -13,15 +13,17 @@
  */
 public class Solution {                 //diameter
     public int solve(TreeNode root) {
-       return sol(root,0);
+        sol(root);
+        return ans;
     }
-    public int sol(TreeNode root,int ans){
+    public int ans=-1;
+    public int sol(TreeNode root){
         if(root==null)
-        return 0;
+        return -1;
 
         int a=sol(root.right);
         int b=sol(root.left);
         ans=Math.max(ans,a+b+2);
-        return a+b+1;
+        return Math.max(a,b)+1;
     }
 }
