@@ -11,7 +11,7 @@
  *     }
  * }
  */
-public class Solution {
+public class Solution {                             //Postorder Traversal
     public int[] postorderTraversal(TreeNode root) {
 
  ArrayList<Integer>arr=new ArrayList<>();
