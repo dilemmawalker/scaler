@@ -11,9 +11,10 @@
  *     }
  * }
  */
-public class Solution {                         //Preorder Traversal
-    public int[] preorderTraversal(TreeNode root) {
-        ArrayList<Integer>arr=new ArrayList<>();
+public class Solution {
+    public int[] postorderTraversal(TreeNode root) {
+
+ ArrayList<Integer>arr=new ArrayList<>();
         sol(root,arr);
         int n=arr.size();
         int[]ar=new int[n];
@@ -26,8 +27,8 @@ public class Solution {                         //Preorder Traversal
         if(root==null)
         return;
 
-        arr.add(root.val);
         sol(root.left,arr);
         sol(root.right,arr);
+        arr.add(root.data);
     }
 }
