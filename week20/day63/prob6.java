@@ -11,7 +11,7 @@
  *     }
  * }
  */
-public class Solution {                         //Serialize Binary Tree
+public class Solution {      //same as previous                   //Serialize Binary Tree
     public int[] solve(TreeNode root) {
        ArrayList<ArrayList<Integer>>arr=new ArrayList<>();
         sol(root,arr,0);
